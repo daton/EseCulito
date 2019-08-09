@@ -57,8 +57,8 @@ abstract class AlumnoRoomDatabase:RoomDatabase(){
         }
 
         /**
-         * Populate the database in a new coroutine.
-         * If you want to start with more words, just add them.
+         * Llenar las base de datos con una nueva corutina
+         * Se limpoia y se llenan cion unas cuantas
          */
         suspend fun llenarDatabase(alumnoDao: AlumnoDao) {
 
