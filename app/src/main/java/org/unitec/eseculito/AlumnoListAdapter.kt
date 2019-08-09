@@ -30,7 +30,7 @@ class AlumnoListAdapter internal constructor(
         holder.nombreItemView.text = current.nombre
     }
 
-    internal fun setWords(words: List<AlumnoEntity>) {
+    internal fun setAlumnos(words: List<AlumnoEntity>) {
         this.alumnos = words
         notifyDataSetChanged()
     }

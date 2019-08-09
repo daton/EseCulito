@@ -66,9 +66,11 @@ abstract class AlumnoRoomDatabase:RoomDatabase(){
             alumnoDao.borrarTodos()
 
             //Nos llena con algo siempre
-            var alumno = AlumnoEntity("yo","juan", "jc@gmail.com")
+            var alumno = AlumnoEntity("uno","Juan", "jc@gmail.com")
             alumnoDao.insertar(alumno)
-            alumno = AlumnoEntity("tu", "ana", "ana@gmail.com")
+            alumno = AlumnoEntity("dos", "Ana", "ana@gmail.com")
+            alumnoDao.insertar(alumno)
+
             alumnoDao.insertar(alumno)
         }
     }

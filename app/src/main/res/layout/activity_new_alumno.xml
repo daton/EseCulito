@@ -19,11 +19,11 @@ limitations under the License. -->
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/edit_word"
+        android:id="@+id/texytoNombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-light"
-        android:hint="16dp"
+        android:hint="Escribe tu nomrbe"
         android:inputType="textAutoComplete"
         android:padding="16dp"
         android:layout_marginBottom="16dp"
@@ -31,7 +31,7 @@ limitations under the License. -->
         android:textSize="18sp" />
 
     <Button
-        android:id="@+id/button_save"
+        android:id="@+id/boton_guardar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
