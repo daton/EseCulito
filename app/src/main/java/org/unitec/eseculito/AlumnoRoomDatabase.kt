@@ -71,7 +71,7 @@ abstract class AlumnoRoomDatabase:RoomDatabase(){
             alumno = AlumnoEntity("dos", "Ana", "ana@gmail.com")
             alumnoDao.insertar(alumno)
 
-            alumnoDao.insertar(alumno)
+
         }
     }
 

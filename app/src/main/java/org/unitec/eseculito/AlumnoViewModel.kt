@@ -20,7 +20,7 @@ class AlumnoViewModel(application: Application) : AndroidViewModel(application) 
     }
 
     /**
-     * 
+     * ESte insert es para guardar en la activiti que se llama NewAlumnoActivity
      */
     fun insertar(alumno: AlumnoEntity) = viewModelScope.launch {
         repository.insertar(alumno)

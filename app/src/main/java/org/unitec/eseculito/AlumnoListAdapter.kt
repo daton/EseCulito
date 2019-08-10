@@ -17,7 +17,7 @@ class AlumnoListAdapter internal constructor(
     inner class AlumnoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nombreItemView: TextView = itemView.findViewById(R.id.textView)
 
-        //Aqui irian otras vistas invocadas con el view
+        //Aqui irian otras vistas invocadas con el view  elemal y el id
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AlumnoViewHolder {
@@ -30,8 +30,8 @@ class AlumnoListAdapter internal constructor(
         holder.nombreItemView.text = current.nombre
     }
 
-    internal fun setAlumnos(words: List<AlumnoEntity>) {
-        this.alumnos = words
+    internal fun setAlumnos(alumnos: List<AlumnoEntity>) {
+        this.alumnos = alumnos
         notifyDataSetChanged()
     }
 

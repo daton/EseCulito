@@ -18,7 +18,10 @@ import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
  val nuevaActovityCodigoRequerido=1
+
     private lateinit var alumnoViewModel:AlumnoViewModel
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
