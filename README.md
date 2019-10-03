@@ -69,4 +69,24 @@ Hacemos una anotación inicializando con un "@", en este caso la nombramos como 
 
 
 
-Nuestra clase se inicia como data class, esta clase usará el paradigma relacional, es decir , se tendrá un id unico e irrepetible
+Nuestra clase se inicia como data class, esta clase usará el paradigma relacional, es decir , cada entidad tendrá un id unico e irrepetible para que la base de datos no entre en conflicto a la hora de guardar datos.
+
+![](.README_images/f93bce42.png)
+
+A continucación creamos un Constructor,los cuales en Kotlin se colocan inmediatamente después de la declaración de la clase entre paréntesis, en este caso nuestro constructor tiene 3 argumentos.
+
+![](.README_images/1f19f751.png)
+
+El primer argumento nos indica que estamos declarando un valor definido con la sintaxis VAL, en ésta caso el nombre es ID y éste será de tipo String y marcamos el caso para las siguientes dos líneas.
+
+![](.README_images/0e693172.png)
+
+En este caso coincidió que los 3 valores son de tipo String, pero se pudo tener un valor Edad de tipo float. 
+
+Ahora nos enfocaremos en la anotación @PrimaryKey , en donde sabemos que todas las bases de datos deben tener un identificador (id)como requisito, por lo que declaramos como PrimaryKey el ID, le colocamos información de la columna @ColumnInfo, indicando en la tabla creada como llamaremos a la columna que va a guardar el ID, en este caso llamaremos a la columna igual que los valores que declaramos.
+
+![](.README_images/7fc71614.png)
+
+Solo el identificador tendrá la anotación de @PrimaryKey.
+
+El ID como String para este caso lo vamos a inicializar usando el paquete java.util.*, con la ayuda de la clase UUID la cual es de gran utilidad pies genera ID de forma aleatoria
