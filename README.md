@@ -89,4 +89,40 @@ Ahora nos enfocaremos en la anotación @PrimaryKey , en donde sabemos que todas 
 
 Solo el identificador tendrá la anotación de @PrimaryKey.
 
-El ID como String para este caso lo vamos a inicializar usando el paquete java.util.*, con la ayuda de la clase UUID la cual es de gran utilidad pies genera ID de forma aleatoria
+El ID como String para este caso lo vamos a inicializar usando el paquete java.util.*, con la ayuda de la clase UUID la cual es de gran utilidad pues genera ID de forma aleatoria de tipo String con la finalidad de evitar duplicados, por esa razón lo inicializamos directamente.
+
+![](.README_images/22e119da.png)
+
+En el caso de que se quiera manejar ese ID como entero(int) solo necesitamos declararlo e inicalizarmos de la siguiente forma:
+
+![](.README_images/4be42444.png)
+
+# El Segundo paso de acuerdo al diagrama mostrado en el inicio, ahora es generar los DAOS.
+
+El DAO es el acceso a la base de datos, lo cual es independiente de la interfaz de usuario. Lo cual hace el manejo de datos localmente. Sería un homologo a los REPO que se crean en MongoDB, pero en este caso se llaman DAO.
+
+![](.README_images/926283b7.png)
+
+En Kotlin creamos una interface con la misma nomenclatura, en este caso lo nombramos Alumno Dao, en este caso no es una clase como generalmente se crean, en este caso será una interface de acuerdo a la arquitectura de SQLite.
+
+![](.README_images/7533075d.png)
+![](.README_images/354efcce.png)
+
+En este caso empezamos con la notación @Dao, la cual la importamos de la clase ROOM. La clase DAO unicamente contendrá el nombre de las operaciones que estaremos usando en SQL como por ejemplo: Insertar, Actualizar, Borrar, etc
+
+![](.README_images/44a93db8.png)
+
+En Base de datos relacionales, cuando necesitamos hacer una consulta o una petición lo invocamos con la palabra QUERY , con SELECT hacemos una búsqueda por lo tanto la notación es como se indica a continucación: @QUERY seguida de SELECT, entre comillas colocamos la consulta como se realiza en SQL, si en SQL u ORACLE anotamos lo que escribimos entre comillas nos hara la búsqueda solicitada.
+
+![](.README_images/dc056cbc.png)
+
+Una vez que se hace la búsqueda en la tabla alumnos y nos regrese el nombre de los alumnos en forma ascendente, colocamos la función con el nombre del método con el tipo de retorno, agregamos LiveData que previamente importamos, ésta nos será de utilidad ya que nos ayudará a estar refrescando los datos cada que se haga una captura de información. Para el tipo de retorno indicamos que es un List (que es el padre de los Arraylist) que es de tipo generico de AlumnoEntity (que fue lo que previamente indicamos que ibamos a guardar) y le indicamos que lo interprete como datos en vivo (livedata).
+
+![](.README_images/ef722640.png)
+
+Para insertar datos es con @INSERT,en esta linea de código le estamos indicando que 
+
+
+
+
+
