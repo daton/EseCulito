@@ -137,6 +137,35 @@ La siguiente linea de código es un QUERY de BORRADO, en este caso se indica que
 
 ![](.README_images/7bd92d36.png)
 
+Una vez que tenemos el DAO ( la interface que tendrá las operaciones), vamos a crear una archivo para poder configurar la base de datos, en este caso creremos el archivo AlumnoRoomDatabase, pero en este caso lo ideal hubiese sido nombrar este archivo ControlEscolarRoomDatabase ya que esta base contendrá tanto alumnos, profesores, materias, etc. Lo dejaremos con el nombre dado previamente pero es importante nombrar las bases de datos de forma general y no en forma particular.
+
+![](.README_images/669dff0b.png)
+
+Vemos en primera instancia que es una clase abstracta, es decir, no podemos crear objetos a partir de ella, por lo tanto para que podamos hacer uso de ella debemos implementarla. La clase AlumnoRoomDatabase hereda de la clase RoomDatabase.
+
+![](.README_images/76ec0342.png)
+
+Una vez que ponemos la herencia de la clase RoomDatabase, esto nos indicará que y se convierte en una base de datos lo que marcamos en amarillo.
+
+![](.README_images/74e7c63b.png)
+
+Primero colocamos la notación @Database para la base de datos, tal notación viene desde la clase android Room. Dentro de los parentesis colocamos las entities que ocuparemos, éstas son las Tablas que creamos por ejemplo en el código tenemos la entitie "AlumnoEntity::class", en caso de que tuvieramos más entidades como por ejemplo "Profesores::class" y "Materias::class", etc tendríamos que colocar éstas entidades dentro del corchete separados cada una de las entidades separadas de ",".
+
+![](.README_images/22099d4b.png)
+
+La siguiente parte del código es "version=1", es importante saber que el número de versión nos indicará los cambios que hacemos en nuestras entidades, por ejemplo, si requerimos anexar una neva entidad de nombre "Calificaciones", tendremos que ahora colocar como número de version=2, en caso de no hacer éstos cambios nos marcará error.
+
+![](.README_images/00030f50.png)
+
+Despues de declarar el constructor AlumnoRoomDatabasevamos a crear el método abstracto alumnoDao el cual tiene un tipo de retorno AlumnoDao el cual fue creado previamente.
+
+![](.README_images/64efe8a5.png)
+
+NOta: Si tuvieramos mas entidades como por ejemplo "Profesor" y "Materias", tendríamos que declararlos como: abstract fun profesorDao(): ProfesorDao y abstract fun materiasDao(): MateriasDao.
+
+A continuación tenemos el objeto companion el cual es acompañante de la clase abstracta AlumnoRoomDatabase,  lo hacemos de esta forma por que dentro de la clase abstracta generamos ahi mismo un objeto ,en teoria de esta clase unicamente debemos tener 1 objeto, no podemos repetir las bases de datos repetidas.
+
+![](.README_images/9e7253c0.png)
 
 
 
