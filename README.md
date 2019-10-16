@@ -120,7 +120,24 @@ Una vez que se hace la búsqueda en la tabla alumnos y nos regrese el nombre de 
 
 ![](.README_images/ef722640.png)
 
-Para insertar datos es con @INSERT,en esta linea de código le estamos indicando que 
+Para insertar datos es con @INSERT,en esta linea de código le estamos indicando que en caso que haya un clonflicto por el hecho que nos aparezca un "Nombre" repetido no haga caso o lo ignore.
+
+![](.README_images/f4d381e7.png)
+
+La siguiente linea se refiere a la acción que se va a ejecutar en la base de datos, es decir, si se está guardando información en la base de datos que ésta se suspenda hasta que no se actualice y entonces pueda continuar.
+
+![](.README_images/f2fd632a.png)
+
+La siguiente linea de código es un QUERY de BORRADO, en este caso se indica que se borre todo lo de la base de datos. En este caso no usaremos esta instrucción pues no nos interesa borrar toda la información.
+
+![](.README_images/05bf5ef8.png)
+
+
+# El Tercer paso de acuerdo al diagrama mostrado en el inicio, ahora es generar la BASE DE DATOS.
+
+![](.README_images/7bd92d36.png)
+
+
 
 
 
