@@ -177,7 +177,23 @@ En la siguiente linea de código tenemos la función getDatabase que asi la nomb
 
 El primer atributo es el contexto el cua indica donde vamos a invocar la base de datos , el activity es donde lo vamos a invocar, el segundo atributo es el scope: CoroutineScope cuya función es refrescar de inmediato los cambios que se hagan. 
 
-La siguiente linea de código indica la INSTANCIA la cual es la base de datos como lo declaramos previamente, lo declaramos con mayúsculas por que de esta manera nos cersioramos que solo habra una base de datos, el signo de interrogación pregunta si la base de datos ya existe, en caso de que no exista se espera hasta que sea creada tal base de datos, eso me garantizará que no exista un error y se cierre la aplicación inmediatamente, le indicamos el tipo de retorno que en este caso invocamos un método que se llama syncronized el cual supervisará que cualquier cambio que se ejecute se sincronice, es decir
+La siguiente linea de código indica la INSTANCIA la cual es la base de datos como lo declaramos previamente, lo declaramos con mayúsculas por que de esta manera nos cersioramos que solo habra una base de datos, el signo de interrogación pregunta si la base de datos ya existe, en caso de que no exista se espera hasta que sea creada tal base de datos, eso me garantizará que no exista un error y se cierre la aplicación inmediatamente, le indicamos el tipo de retorno que en este caso invocamos un método que se llama syncronized el cual supervisará que cualquier cambio o nueva acción que se ejecute se lleve a cabo de acuerdo a su funcionalidad, es decir, si hay una acción que se esta solicitando hacer pero previo a ésta se pidió otra acción que es primordial que se ejecute para poder realizar la segunda acción solicitada, lo que hace syncronized es que pausa la segunda acción hasta que la primera acción se termine de realizar y entonces da paso a que se ejecute la segunda acción, con la sentencia lock es un candado para detener o pausar la acción sin perder la información de la base de datos.
 
 ![](.README_images/5259e588.png)
+
+Las siguientes lineas de código creamos la base de datos AlumnoRoomDatabase:
+
+![](.README_images/077dbb71.png)
+
+Las siguientes tres lineas son métodos que se invocan después de haber creado la base de datos y son necesarias para que se construya.
+
+![](.README_images/01ae6d03.png)
+
+Tenemos la siguiente clase privada private class AlumnoDatabaseCallback que es parte del companion object, éste hara que se propague la CoroutineScope. Las siguientes lineas de código hacen que cada que se refresque la base de datos, se borren los nuevos datos. Debemos comentarlos para que no nos borre los nuevos datos que capturemos.
+
+![](.README_images/4a082ea8.png)
+
+Las lineas finales, nos indicaban que los "nuevos" datos que ingresaramos a la base de datos deberían ser borrados, esto se hace invocando el método  alumnoDao.borrarTodos(), posteriormente solo dejaba por default los dos usuarios capturados, éstas líneas se deben de comentar pues la finalidad es guardar los nuevos alumnos que ingresen a la base de datos.
+
+![](.README_images/006cf9dd.png)
 
