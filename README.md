@@ -167,8 +167,17 @@ A continuación tenemos el objeto companion el cual es acompañante de la clase 
 
 ![](.README_images/9e7253c0.png)
 
+Tenemos declarado un @Volatile el cual se usa en kotlin para indicar que la base de datos que inicializa en null es la misma que declaramos en el número 1, su función además es realizar todos los cambios en automático en esas otras vistas o clases, es decir si hay un cambio que se ejecuten sin necesidad de "refrescar" absolutamente nada.
 
+![](.README_images/ce45a459.png)
 
+En la siguiente linea de código tenemos la función getDatabase que asi la nombramos la cual observamos que recibe dos atributos o parametros y el tipo de retorno es AlumnoRoomDatabase, es decir más adelante invocaremos el método getDatabase dentro del ViewModel.
 
+![](.README_images/010756ff.png)
 
+El primer atributo es el contexto el cua indica donde vamos a invocar la base de datos , el activity es donde lo vamos a invocar, el segundo atributo es el scope: CoroutineScope cuya función es refrescar de inmediato los cambios que se hagan. 
+
+La siguiente linea de código indica la INSTANCIA la cual es la base de datos como lo declaramos previamente, lo declaramos con mayúsculas por que de esta manera nos cersioramos que solo habra una base de datos, el signo de interrogación pregunta si la base de datos ya existe, en caso de que no exista se espera hasta que sea creada tal base de datos, eso me garantizará que no exista un error y se cierre la aplicación inmediatamente, le indicamos el tipo de retorno que en este caso invocamos un método que se llama syncronized el cual supervisará que cualquier cambio que se ejecute se sincronice, es decir
+
+![](.README_images/5259e588.png)
 
