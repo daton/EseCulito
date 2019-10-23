@@ -197,3 +197,34 @@ Las lineas finales, nos indicaban que los "nuevos" datos que ingresaramos a la b
 
 ![](.README_images/006cf9dd.png)
 
+# El Cuarto paso de acuerdo al diagrama mostrado en el inicio, ahora es generar  El REPOSITORY
+
+![](.README_images/ea116921.png)
+
+Este tipo es parecido al quese hacía en Spring, creamos una clase con la notación Raepository para saber que vamos a trabajr este elemento del diagrama con el nombre de la tabal o entidad que previamente se generó en la base de datos. Por lo tanto le damos el nombre de AlumnoRepository para decir que es un repositorio y se va a mapear a la entidad Alumno que a su vez es una tabla con los campos que ya le pusimos.
+
+![](.README_images/16398600.png)
+
+A continuación tenemos el constructor, tenemos un valor constante y el tipo de dato para inicializar el repositorio que es el AlumnoDao que es donde tiene las operaciones y lo que hace un repositorio es que le da implementación.
+
+![](.README_images/9c1cf918.png)
+
+La linea suspend indica que mantiene fuera del thread o de la tarea principal que esta haciendo el programa y esta haciendo en el background las cosas para que cambie o actuelice, le damos el nombre del función insertar ( que fue el mismo que se le dio en la clase AlumnoDao en donde no tienen ninguna funcionalidad pues no tiene más argumentos), la cual tiene llaves de apertura y cierre que indica y con el dao invocamos la operación insertar.
+
+![](.README_images/3a9882d4.png)
+
+![](.README_images/e97916db.png)
+
+ 
+
+
+
+
+![](.README_images/dcba74f5.png)
+
+# El Cuarto paso de acuerdo al diagrama mostrado en el inicio, ahora es generar  El VIEWMODEL
+
+El ViewModel es donde se enlazan las componentes de la vista al modelo.
+
+![](.README_images/dcba74f5.png)
+
