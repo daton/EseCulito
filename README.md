@@ -215,16 +215,30 @@ La linea suspend indica que mantiene fuera del thread o de la tarea principal qu
 
 ![](.README_images/e97916db.png)
 
+ La línea val todosAlumnos indica un atributo el cual regresa un LiveData el cual es un dato que se actualiza en automático genérico a un listado de AlumnoEntity, inmediatamente se inicializa  con el atributo dao.getTodosOrdenados (éste se encuentra declarado en la interface AlumnoDao).
+ 
+ ![](.README_images/fa28cbb7.png)
+ 
+ ![](.README_images/5ee56528.png)
+ 
+ El repositorio es un paso previo a ponerlo en la interfaz de usuario, lo cual vemos que todas la clases hechas no estan relacionadas con la interfaz de usuario con la finalida de separar la lógica de la base de datos con la lógica de interfaz de usuario.
  
 
+# El Quinto paso de acuerdo al diagrama mostrado en el inicio, ahora es generar  El VIEWMODEL
 
+El ViewModel es donde se enlazan las componentes de la vista al modelo con la interfaz de usuario. Por cada entidad creada debe haber un viewmodel:
 
+-Creamos Entidad
+-Creamos el Dao
+-Creamos la base de datos
+-Creamos el Repositorio
+-A continuación crearemos el ViewModel
 
 ![](.README_images/dcba74f5.png)
 
-# El Cuarto paso de acuerdo al diagrama mostrado en el inicio, ahora es generar  El VIEWMODEL
+El viewmodel tiene la obligación de hacer la lógica de implementación de la base de datos.
 
-El ViewModel es donde se enlazan las componentes de la vista al modelo.
+La clase AlumnoViewModel recibe en el constructor (marcado con color amarillo) un atributo que se llama application de tipo Application que es de aplicación Android para que ya este disponible en todas las vistas.
 
-![](.README_images/dcba74f5.png)
+![](.README_images/4b525278.png)
 
