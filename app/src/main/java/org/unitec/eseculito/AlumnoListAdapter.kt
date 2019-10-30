@@ -16,7 +16,7 @@ class AlumnoListAdapter internal constructor(
 
     inner class AlumnoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nombreItemView: TextView = itemView.findViewById(R.id.textView)
-
+        val emailItemView: TextView = itemView.findViewById(R.id.textemail)
         //Aqui irian otras vistas invocadas con el view  elemal y el id
     }
 
@@ -28,6 +28,7 @@ class AlumnoListAdapter internal constructor(
     override fun onBindViewHolder(holder: AlumnoViewHolder, position: Int) {
         val current = alumnos[position]
         holder.nombreItemView.text = current.nombre
+        holder.emailItemView.text =current.email
     }
 
     internal fun setAlumnos(alumnos: List<AlumnoEntity>) {

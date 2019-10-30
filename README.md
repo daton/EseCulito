@@ -242,3 +242,104 @@ La clase AlumnoViewModel recibe en el constructor (marcado con color amarillo) u
 
 ![](.README_images/4b525278.png)
 
+application hereda de la clase AndroidViewModelque recibe un argumento de tipo application. En este caso siempre se debe replicar el constructor padre (marcado en rojo) en el constructor hijo ( marcado en amarillo).
+
+![](.README_images/cb2103fd.png)
+
+Declaramos un atributo que se llama AtributoRepository con la finalidad que estén disponibles las operaciones.
+
+![](.README_images/e76ba592.png)
+
+Inicializamos la variable todosAlumnos que es donde se va a inicializar la entidad Alumno, que es en la búsqueda de todos y aparecerá en listado.
+
+![](.README_images/351080af.png)
+
+Cuando ponemos un INIT quiere decir que cuando se invoque la aplicación el bloque declarado se iniciará, invocamos la base de datos (amarillo),la obtengo(rojo), la enlazo a la aplicación (azul),se le indica que va a ser en el viemodelscope (el alcance de todo el viewmodel) y por último se generará el alumnoDao (rosa). Con esta línea se inicializa el AlumnoDao es decir como si se cargaran todas las operaciones de la base de datos. En caso de que se tuvieran más entidades se tendría que crear ésta línea para esas entidades.
+
+![](.README_images/068820eb.png)
+
+Inicializamos el repository pasandole el AlumnoDao y de igual forma el segundo atributo todosAlumnos.
+
+![](.README_images/3a58658e.png)
+
+Creamos la función con el mismo nombre con el que se creó en el AlumnoDao,AlumnoRepository y en el ViweModel. en este caso "insertar",le pasamos el mismo argumento el cual se replica en los 3 que se mencionaron anteriormente (insertar(alumno:AlumnoEntity)), lo importante además es que lo inicializamos con el viewmodelscope (alcance), es decir se va a a inicilizar una vez que se lance (launch)la aplicación, es decir, que todo se cargue una vez que se corra la aplicación. Esto va a estar en el contexto de una coroutina la cual como ya vimos anteriormente es un tread que se lleva a cabo en el background independientemente que se esté  ejecutando una acción.
+
+![](.README_images/046fa93a.png)
+
+Invocamos el repositorio y le indicamos que "inserte" un alumno que la vamos a pasar una vez que se le invoque.
+
+![](.README_images/61ff6a54.png)
+
+# Creando las LISTAS
+
+Creamos un adaptador de listas el cual ya se va a enlazar a una componente visual, éste su usa cuando se quiere desplegar un listado de objetos de mensajes. 
+
+![](.README_images/822b1268.png)
+
+Este puede ser un poco más complejo ya que es un objeto que está compuesto de varias cosas, el cual se va a activar con el LiveData.
+
+Tenemos la clase AlumnoListAdapter el cual tenemos un constructor con un atributo de tipo Context,el contexto es precisamente donde se invocan los id, es el que ayuda a invocar los id.
+
+![](.README_images/f9ad1d6e.png)
+
+Recyclerview (Vista reciclada) se actualiza constantemente los listados.
+
+![](.README_images/82c90f36.png)
+
+El primer atributo que tenemos es el inflater, es un inflador de la vista el cual despliega los datos, es el que lee las etiquetas de la interfaz de usuario. Lo inicializamos diciendo que el inflater es de tipo LayoutInflater el cual es el que va a llenar el layout el cual es donde se disponen todas las componentes.
+
+![](.README_images/7e52a70a.png)
+
+Con la clase LayoutInflater le indicamos que lo saque del contexto, en donde el conexto es el que invoca todos los id´s que se tengan en la vista.
+
+![](.README_images/e93a6555.png)
+
+Generamos lo que vamos a llenar en la lista, en este caso serán "alumnos" , por lo que le indicamos que en una lista vacia lo haga genérico a un AlumnoEntity y lo colocamos en la var alumnos.
+
+![](.README_images/feefa714.png)
+
+Creamos una clase interna la cual nos sirve para aprovechar las variables antes declaradas y usemos estos atributos en ésta clase interna. AlumnoViewHolder (holder es un contenedor) es decir un contenedor de alumnos, el cual puede ser un texview, editext, cualquier vista que se puso en el layout inmediatamente lo detecta el constructor.
+
+![](.README_images/7414fa6e.png)
+
+El view es lo siguiente:
+
+![](.README_images/59cbcfd1.png)
+
+En este caso se puso un Textview:
+
+![](.README_images/dab06fb6.png)
+
+Val nombreItemView (pues solo quiero obtener el NOMBRE del alumno) el cual es de tipo textView e inmediatamente obtengo el id.TextView
+
+![](.README_images/e7cf4f11.png)
+
+![](.README_images/dab06fb6.png)
+
+De la anterior ya estamos relacionando la Vista con el Modelo (ViewModel).
+
+Una vez creada la Vista, el ViewGroup es todo lo que tenemos en el layout, el ViewTipe es un entero el cual si tenemos una imagen (icono del usuario= id0), textview para apellido = id1, texteview para fecha=id2, etc, ese entero es el que marcamos en rojo.
+
+![](.README_images/1e926d66.png)
+
+Del arreglo de alumnos que tenemos en la base de datos va a poner la posición del elemento que tenemos ahi.
+
+![](.README_images/ec7b8818.png)
+
+El current indicará la posición y le coloca el nombre que se tiene en esa posición.
+
+Del método Recycleview tenemos un método que se llama notifyDataSetChanged, el cual en caso de que agregemos un nuevo alumno éste metodo lo notifica a la lista para que se actualice sin necesidad de agregar un botón para actualizar los datos.
+
+![](.README_images/f94a37e6.png)
+
+La función getItemCount() es opcional, pero en este caso lo colocamos para  saber cuantos elementos de la base de datos vamos a colocar en la lista.
+
+![](.README_images/dcefc99a.png)
+
+Si quisieramos que nos aparecieran mas variables en el layout, tendriamos que declararlas de la siguiente manera:
+
+![](.README_images/97b2ec86.png)
+
+![](.README_images/08e37d3d.png)
+
+El último paso es enlazar todo en el MainActivity.
