@@ -362,7 +362,37 @@ El RecyclerView  lo vemos en el content_main como una vista, pero vemos que el w
 
 ![](.README_images/6992fc35.png)
 
-Cuando lo invocamos en el mainActivity, inicializando la variable "recicleview" , le indicamos que podrá acceder a los métodos y atributos que tiene la clase RecyclerView.
+Cuando lo invocamos en el mainActivity, inicializando la variable local "recicleview" , le indicamos que podrá acceder a los métodos y atributos que tiene la clase RecyclerView.
 
 ![](.README_images/ee142432.png)
+
+Ahora procedemos a declarar la clase ADAPTADORA (AlumnoListAdapter) que es la que relaciona los elementos reales de la base de datos, los va a desplegar en el recycleviewitem tantas veces como aparece en el recycleview.
+
+Es decir el adaptador esta relacionado con:
+
+1-.El recycleview item (cada elemento individual)
+2-.Donde se van a juntar todos que es el Recycleview (listado completo)
+3-.El listado completo de la base de datos AlumnoList
+
+![](.README_images/bdf9cb37.png)
+
+Al val adaptador le damos el constructor AlumnoListAdapter(this) le indicamos que esta recibiendo "this" que es el contexto el cual es el activity que vamos a desplegar. En la segunda imagen mostramos el cosntructor de AlumnoListAdapter(this), el cual hereda de la clase RecyclerView.Adapter
+
+![](.README_images/6fe70e3a.png)
+
+![](.README_images/1039260e.png)
+
+La clase RecyclerView tiene un método que se llama "adapter" , el recucleview le indicamos que tenga un adaptador asignado (1) el cual es el objeto que acabamos de crear(2) el cual se encarga de enlazar todo.
+
+![](.README_images/ec844368.png)
+
+
+
+
+
+
+
+
+
+
 
