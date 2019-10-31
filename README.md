@@ -343,3 +343,26 @@ Si quisieramos que nos aparecieran mas variables en el layout, tendriamos que de
 ![](.README_images/08e37d3d.png)
 
 El último paso es enlazar todo en el MainActivity.
+
+# Enlazando las clases con el MAIN ACTIVITY
+
+En el MainActivity declaramos una variable "recucleView" que es igual a la variable que se declaró en el layout donde se va a desplegar el listado (lo  marcamos con azul).
+
+![](.README_images/4a9a876c.png)
+
+![](.README_images/2d95ca09.png)
+
+El recycleView que vemos en el content_main es el id con el que lo vamos a relacionar en la vista.
+
+El "id" que en este caso el es recyclerview lo vamos a invocar como un tipo de dato concreto que es de tipo RecyclerView que es una clase.
+
+![](.README_images/57f01916.png)
+
+El RecyclerView  lo vemos en el content_main como una vista, pero vemos que el widget pertenece a la clase RecyclerView y por lo tanto tiene ciertas propiedades.
+
+![](.README_images/6992fc35.png)
+
+Cuando lo invocamos en el mainActivity, inicializando la variable "recicleview" , le indicamos que podrá acceder a los métodos y atributos que tiene la clase RecyclerView.
+
+![](.README_images/ee142432.png)
+
