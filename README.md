@@ -386,7 +386,21 @@ La clase RecyclerView tiene un método que se llama "adapter" , el recucleview l
 
 ![](.README_images/ec844368.png)
 
+Ahora con el recucleview(1) le indicamos que con el atributo layoutManager(2) vamos a generar un LinearLayoutManager(3) que es un administrador de layouts lineales, le pusimos que fuese un LinearLayoutManager por que en el "recyclerview_item.xml" es un linearlayout, además le indicamos que en este contexto lo vamos a inicializar, el contexto en este caso es nuestro activity. 
 
+PEGAR IMAGEN
+PEGAR OTRA IMAGEN DEL RECYCLERITEM
+
+Ahora generamos un objeto alumnoViewModel que es el cual inicializamos como ViewModelProviders y le indicamos con "of" en el activity en el que lo vamos a invocar.
+
+PEGAR IMAGEN
+
+Invocamos el método GET(que me va a dar el AlumnoViewModel) que a su vez el "AlumnoViewModel" lo vamos a sacar de la clase AlimnoViewModel y éste el que me va a dar todo el listado. Es decir con el método GET vamos a invocar un objeto de la clase AlumnoViewModel. Debemos recordar que la clase AlumnoViewModel ya tiene tel LiveData que es listado con todos los alumnos (o mensajes recibidos), el cual de igual forma lo tendra el recucleView.
+
+PEGAR IMAGEN1
+PEGAR IMAGEN DEL ALUMNOVIEWMODEL
+
+La siguiente linea indica que del alumnoViewModel (que ese nombre fue aleatorio) saque a todoslosalumnos
 
 
 
