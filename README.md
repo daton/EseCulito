@@ -402,7 +402,7 @@ PEGAR IMAGEN DEL ALUMNOVIEWMODEL
 
 La siguiente linea indica que del alumnoViewModel (que ese nombre fue aleatorio) saque a todoslosalumnos
 
-
+gggggg
 
 
 
